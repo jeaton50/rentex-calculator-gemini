@@ -1,1 +1,60 @@
+# .gemini/config.yaml
 
+# List of file patterns Gemini should completely ignore during review.
+# This prevents "unsupported file type" errors by skipping media and binaries.
+ignore_patterns:
+  # Images
+  - "*.png"
+  - "*.jpg"
+  - "*.jpeg"
+  - "*.gif"
+  - "*.svg"
+  - "*.ico"
+  - "*.webp"
+  - "*.bmp"
+  - "*.tiff"
+  
+  # Video & Audio (Likely the cause if you have an "Image & Video Toolkit")
+  - "*.mp4"
+  - "*.mov"
+  - "*.avi"
+  - "*.mkv"
+  - "*.mp3"
+  - "*.wav"
+  
+  # Documents & Archives
+  - "*.pdf"
+  - "*.docx"
+  - "*.zip"
+  - "*.tar"
+  - "*.gz"
+  - "*.rar"
+  - "*.7z"
+
+  # Executables & Binaries
+  - "*.exe"
+  - "*.dll"
+  - "*.so"
+  - "*.dylib"
+  - "*.bin"
+
+  # Large Auto-generated / Lock Files (Optional but recommended for cleaner reviews)
+  - "package-lock.json"
+  - "yarn.lock"
+  - "pnpm-lock.yaml"
+  - "composer.lock"
+  - "Cargo.lock"
+  - "go.sum"
+  
+  # Build Directories
+  - "dist/**"
+  - "build/**"
+  - "node_modules/**"
+  - "vendor/**"
+
+# Optional: Configure review behavior
+code_review:
+  # Ensure reviews are enabled
+  disable: false
+  # Options: LOW, MEDIUM, HIGH, CRITICAL
+  comment_severity_threshold: MEDIUM
